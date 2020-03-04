@@ -38,17 +38,19 @@ CMD ["hello.sh"]
 위와 같이 2개의 파일을 만들었으면 이제 도커를 이용해서 빌드 할 차례 입니다.
 
 ```bash
-sudo docker image build -t hello:lastest .
+sudo docker image build -t hello:latest .
 ```
 
 * `image build` : 이미지를 빌드하겠다는 파라미터 입니다.
-* `-t hello:lastest` : 타겟\(버전\)을 hello의 lastest 로 표기하겠다는 의미입니다.
+* `-t hello:latest` : 타겟\(버전\)을 hello의 latest 로 표기하겠다는 의미입니다.
 * `.` : 현재 디렉토리를 빌드하겠다는 의미입니다.
 
-참고로 docker 명령어는 항상 관리자 권한에서 동작해야 하므로 sudo 혹은 su 에서 실행해야 합니다.
+{% hint style="info" %}
+docker 명령어는 항상 관리자 권한에서 동작해야 하므로 sudo 혹은 su 에서 실행해야 합니다.
+{% endhint %}
 
 ```bash
-sudo docker container run hello:lastest
+sudo docker container run hello:latest
 ```
 
 이 후에 결과로 \`Hello, World\`가 출력되는것을 확인 할 수있습니다.
