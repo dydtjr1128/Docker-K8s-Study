@@ -1,6 +1,6 @@
 # 3. 이미지 빌드
 
-2.1절 에서는 `docker image build -t go_server:latest .` 라는 명령으로 빌드를 진행 했었습니다.
+2.1절 에서는 `docker image build -t go_server:latest .`  명령으로 빌드를 진행 했었습니다.
 
 `docker image build -t 이미지명:태그명 Dockerfile의_경로` 와  같은 방식으로 표기를 합니다. -t 옵션을 이용해 이미지명과 태그명을 지정할 수있으며 태그명을 생략 시 latest로 자동적으로 태그가 붙습니다. -t를 사용하지 않아도 빌드가 되지만 그런 경우 해시값을 이용해 빌드 한 파일을 찾아야하므로 무조건적으로 붙인다고 생각하는것이 좋습니다.
 

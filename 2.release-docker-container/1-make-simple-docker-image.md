@@ -1,6 +1,6 @@
 # 1. 간단한 도커 이미지 만들기
 
-간단한 예제를 이용해 도커 이미지를 만들고 실행 해 보도록 하겠습니다. go 언어를 이용하여 만든 간단한 웹서버에 대한 코드입니다.
+간단한 예제를 이용해 도커 이미지를 만들고 실행 해 보도록 하겠습니다. go 언어를 이용하여 만든 간단한 웹서버에 대한 코드입니다. 
 
 {% tabs %}
 {% tab title="server.go" %}
@@ -45,19 +45,19 @@ CMD ["go", "run", "/echo/server.go"]
 
 위와 같이 2개의 파일이 준비되었다면 도커 명령어를 쳐 주면 됩니다.
 
-```text
+```bash
 docker image build -t go_server:latest .
 ```
 
 그 후에 만들어준 이미지 파일을 실행하고 다른 쉘을 켜 확인 해 볼 수 있습니다.
 
-```text
+```bash
 docker container run -t -p 9000:8080 go_server:latest
 ```
 
 위의 코드는 실행 시 호스트 os의 9000과 도커 내부의 8080과 연결해 실행하겠다는 의미입니다.
 
-```text
+```bash
 curl http://localhost:9000
 ```
 
