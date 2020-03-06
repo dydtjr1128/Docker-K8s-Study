@@ -35,3 +35,7 @@ Successfully tagged go_server:latest
 
 또한 `docker image ls` 명령으로 저장된 도커 컨테이너 이미지들을 확인 할 수도 있습니다.
 
+{% hint style="info" %}
+`Dockerfile이 아닌 다른 이름의 파일로 빌드 하고 싶은 경우` -f옵션을 사용하여 빌드 할 수있습니다. ex\) `docker image build -f Dockerfile-example -t go_server:latest`
+{% endhint %}
+
