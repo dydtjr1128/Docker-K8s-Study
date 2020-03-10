@@ -26,11 +26,27 @@ docker logout
 
 로그인 된 계정을 로그아웃 할 수 있습니다.
 
-## 도커 이미지 푸쉬
+## 도커 네임스페이스 변경
+
+```bash
+docker image tag example/go-server:latest dydtjr1128/go-server:latest
+```
+
+도커 이미지를 도커 허브등의 외부 레포지토리에 올리기 위해 해당 네임스페이스\(`dydtjr1128/go-server`\)의 프로젝트 이름으로 태그를 변경해야 합니다. 도커 허브의 경우 자신 혹은 소속 기관이 소유한 레포지토리에만 이미지를 등록 할 수 있기 때문입니다.
+
+## 도커 이미지 푸쉬\(push\)
 
 ```bash
 docker push dydtjr1128/go-server:latest
 ```
 
  `go-server` 라는 이름의 이미지를  `dydtjr1128/go-server`레포지토리로 푸시 할 수 있습니다.
+
+## 도커 이미지 풀\(pull\)
+
+```bash
+docker image pull -t dydtjr1128/go-server:latest
+```
+
+해당 레포지토리의 이미지를 위와 같이 풀 해 올 수 있습니다.
 
