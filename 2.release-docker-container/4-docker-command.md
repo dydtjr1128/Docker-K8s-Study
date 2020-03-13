@@ -98,6 +98,14 @@ docker container exec echo pwd
 
 위와 같이 현재 실행중인 컨테이너에서 현재 경로를 가져오는 echo pwd 라는 명령을 내릴 수 있습니다.
 
+표준 입력 연결을 유지하는 `-i` 옵션과 유사 터미널을 할당하는 `-t` 옵션을 조합해 컨테이너를 셸에서 다룰수 있게 해줍니다.
+
+```bash
+cker container exec -it echo sh
+pwd
+/go <- 출력
+```
+
 ### 파일 복사하기
 
 ```bash

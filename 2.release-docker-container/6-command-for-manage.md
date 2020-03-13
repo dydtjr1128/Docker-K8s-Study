@@ -12,5 +12,15 @@
 
 `docker system prune` : 사용하지 않는 도커 이미지 및 컨테이너, 볼륨 네트워크 등 모든 도커 리소스를 일괄적으로 삭제합니다.
 
-### 
+### stats - 사용현황 확인하기
+
+stats은 시스템 리소스 사용 현황을 컨테이너 단위로 확인 할 수 있도록 도와줍니다. 유닉스 계열 운영체제의 top 명령과 같은 역할을 합니다.
+
+```text
+docker container stats [options] [대상_컨테이너_ID]
+```
+
+`docker container stats` : 모든 컨테이너의 상태를 보여줍니다.
+
+
 
