@@ -9,6 +9,27 @@
 도커 컴포즈에서 Compose는 yaml 포맷으로 기술된 설정 파일로, 여러 컨테이너의 실행을 한번에 관리 할 수 있도록 해줍니다.
 
 ```text
-docker-compose version
+>docker-compose version
+docker-compose version 1.25.4, build 8d51620a
+docker-py version: 4.1.0
+CPython version: 3.7.4
+OpenSSL version: OpenSSL 1.1.1c  28 May 2019
 ```
+
+위와 같이 출력된다면 도커 컴포즈를 사용 할 수 있는 상태입니다.
+
+{% tabs %}
+{% tab title="docker-compose.yml" %}
+```text
+version: "3"
+services:
+	echo:
+		image: dydtjr1128/go-server:latest
+		ports:
+            - 9000:8080
+```
+{% endtab %}
+{% endtabs %}
+
+version은 해당 docker-compose.yml
 
