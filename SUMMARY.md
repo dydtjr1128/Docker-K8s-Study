@@ -17,4 +17,5 @@
 * [4. 도커 커맨드](2.release-docker-container/4-docker-command.md)
 * [5. 도커 허브 연동하기](2.release-docker-container/5-sync-docker-hub.md)
 * [6. 운영과 관리를 위한 명령](2.release-docker-container/6-command-for-manage.md)
+* [7. 여러 컨테이너 실행하기](2.release-docker-container/7-run-multiple-containers.md)
 
