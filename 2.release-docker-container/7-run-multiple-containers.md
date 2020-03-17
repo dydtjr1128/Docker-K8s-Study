@@ -31,5 +31,5 @@ services:
 {% endtab %}
 {% endtabs %}
 
-version은 해당 docker-compose.yml
+version은 해당 `docker-compose.yml` 가 존재하는 경로에서 `docker-compose up -d` 명령으로 실행 할 수 있습니다.
 
