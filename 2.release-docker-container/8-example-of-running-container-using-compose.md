@@ -24,3 +24,34 @@ services:
 
 이 부분을 잘 기해 두어야 나중에 사용 할 수 있습니다. 그 후에 [http://localhost:8080](http://localhost:8080) 으로  접속해 젠킨스 페이지를 확인 할 수 있습니다.
 
+```text
+docker container exec -it master ssh-keygen -t rsa
+```
+
+위의 명령으로 sha 키를 만들어 줍니다.
+
+{% tabs %}
+{% tab title="docker-compose.yml" %}
+```text
+version: "3"
+services:
+    master:
+        container_name: master
+        image: jenkinsci/jenkins:2.142-slim
+        ports:
+            - 8080:8080
+        volumes:
+            - ./jenkins_home:/var/jenkins_home
+        links
+            - slave01
+    slave01:
+        container_name: slave01
+        image: jenkinsci/ssh-slave
+        environment:
+            - JENKINS_SLAVE_SSH_PUBKEY=ssh-rsa AAAAB3NzaC..........
+```
+{% endtab %}
+{% endtabs %}
+
+그리고 위와 같이 자식의 젠킨스 컨테이너를 추가해주고, jenkins\_home/.ssh/jenkins\_home.ssh의 코드를 넣어줍니다.
+
