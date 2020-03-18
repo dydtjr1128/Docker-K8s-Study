@@ -33,3 +33,15 @@ services:
 
 version은 해당 `docker-compose.yml` 가 존재하는 경로에서 `docker-compose up -d` 명령으로 실행 할 수 있습니다.
 
+```text
+docker container ls
+```
+
+이전과 같이 ls 명령으로 실행 확인을 할 수 있습니다.
+
+```text
+docker-compose down
+```
+
+종료는 일일히 컨테이너의 ID를 지정해야하는 docker container stop 명령보다 같단하게 종료 할 수 있습니다.
+
