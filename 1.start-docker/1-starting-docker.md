@@ -6,7 +6,7 @@
 
 ## 도커와 가상머신의 차이
 
-![&#xAC00;&#xC0C1;&#xBA38;&#xC2E0;&#xACFC; &#xB3C4;&#xCEE4;&#xC758; &#xAD6C;&#xC870;&#xC801; &#xCC28;&#xC774;](../.gitbook/assets/image%20%283%29.png)
+![&#xAC00;&#xC0C1;&#xBA38;&#xC2E0;&#xACFC; &#xB3C4;&#xCEE4;&#xC758; &#xAD6C;&#xC870;&#xC801; &#xCC28;&#xC774;](../.gitbook/assets/image%20%284%29.png)
 
 위의 그림은 가상머신과 도커\(Container 기반\) 의 차이를 나타내는 그림입니다. VMware 혹은 Virtualbox 등의 가상머신은 실제로 호스트 OS 위에 각각의 게스트 OS가 존재하는 OS 가상화 방식을 사용합니다. 사용법이 간단하지만 무겁고 느려서 이를 이용해 서비스를 운영하기에는 오버헤드가 큽니다. 이러한 상황을 개선하기위해서 CPU에 적용된 HVM가상화라는 기술을 적용하여 [ KVM\(Kernel-based Virtual Machine\)](https://ko.wikipedia.org/wiki/%EC%BB%A4%EB%84%90_%EA%B8%B0%EB%B0%98_%EA%B0%80%EC%83%81_%EB%A8%B8%EC%8B%A0)과 [반가상화\(Paravirtualization\)](https://ko.wikipedia.org/wiki/%EB%B0%98%EA%B0%80%EC%83%81%ED%99%94) 기술이 도입되었습니다. 이기술들이 적용된 가상화 방법 역시 게스트 OS가 필요했지만 전체적인 가상화가 아니었기 때문에 성능적으로 개선이 생겼습니다. 
 
@@ -20,7 +20,7 @@
 
 사실 도커  버전 1.11 이전 버전에서는 리눅스 컨테이너 방식인 [LXC\(LinuX Container\)](https://ko.wikipedia.org/wiki/LXC)라는 방식을 사용해 왔다. 하지만 현재는 [runC](https://www.docker.com/blog/runc/) 라고 불리는 방식으로 변경되었습니다.
 
-![LXC&#xC640; runC &#xBC29;&#xC2DD; &#xCC28;&#xC774;](../.gitbook/assets/image%20%289%29.png)
+![LXC&#xC640; runC &#xBC29;&#xC2DD; &#xCC28;&#xC774;](../.gitbook/assets/image.png)
 
 둘 다 호스트 OS 위에서 각각의 컨테이너로 나누어 관리하는 부분은 동일하지만 몇가지 차이점이 존재했습니다.
 
