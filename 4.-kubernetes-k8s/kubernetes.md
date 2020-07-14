@@ -8,7 +8,7 @@
 
 포스트를 작성하면서 개발은 윈도우에서 하고, WSL을 이용한 도커와 쿠버네티스를 사용할 예정입니다. 그렇기 때문에 [WSL 설치](https://dydtjr1128.github.io/windows/2020/06/01/Install-WSL2.html) 포스트를 기반으로 설치해서 사용합니다.
 
-실제로 쿠버네티스는  Master node와 Worker node로 이루어져 있습니다. 여기서 node는 실제 물리 서버 혹은 가상머신을 뜻합니다. 이런 환경에서 개발 및 테스트 하기에는 어려우므로 이를 대신해 주는 `minikube`라는 것이 존재합니다.
+실제로 쿠버네티스는  Master node와 Worker node로 이루어져 있습니다. 여기서 node는 실제 물리 서버 혹은 가상머신을 뜻합니다. aws에 여러개를 만들거나 실제 환경을 구상하기에는 어려움이 따르므로 이를 가상으로 만들어 줄 수있는 `minikube`라는 것이 존재합니다. 저는 이 minikube를 이용해 쿠버네티스를 공부 해 볼 예정입니다.
 
 ## Minikube install 
 
@@ -16,9 +16,30 @@
 
 ![](../.gitbook/assets/image%20%2811%29.png)
 
-윈도우에 설치한 도커에서 위와 같이 우분투 추가 설정을 열어줍니다.
+윈도우에 설치한 도커에서 위와 같이 우분투 추가 설정을 열어줍니다. 위오 같이 우분투 설정을 해 주고, Kubernetes 탭에서 Enable Kubernetes를 체크 해준 뒤 적용해 줍니다.
 
+![](../.gitbook/assets/image%20%2818%29.png)
 
+그 후에 쿠버네티스까지 실행된 부분이 확인 되면 ubuntu 창에서 `kubectl cluster-info`명령어를 통해 쿠버네티스 클러스터의 동작을 확인 할 수 있습니다.
+
+```text
+curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/
+```
+
+이제 위의 명령어로 WSL 내부에서 쿠버네티스를 설치해 주어야 합니다.
+
+이제 클러스터를 만들어 보겠습니다.
+
+```text
+echo $KUBECONFIG # 설정이 없는것을 확인합니다.
+
+# wslClusterExample라는 이름의 클러스터를 생성합니다.
+kind create cluster --name wslClusterExample 
+```
+
+![&#xD074;&#xB7EC;&#xC2A4;&#xD130; &#xC0DD;&#xC131;](../.gitbook/assets/image%20%2819%29.png)
 
 wsl을 사용하는 경우 우분투 쉘에서 다음 명령어를 실행합니다.
 
